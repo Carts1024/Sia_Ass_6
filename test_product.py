@@ -26,5 +26,7 @@ class TestProduct(unittest.TestCase):
         self.assertEqual(self.product.get_final_price(), Decimal('8.80'))
 
     def test_invalid_price(self):
+        product = Product(id=1, name="Test Product", price=Decimal("10.00"), description="Test Description")
         with self.assertRaises(ValueError):
-            self.product.price = Decimal('-1.00')
+            product.price = Decimal('-1.00')
+
